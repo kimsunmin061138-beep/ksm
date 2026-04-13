@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소통함 | KIM SEON MIN 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .board-page-container {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            min-height: 80vh;
+        }
+        .board-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .board-header h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GNB -->
+    <nav id="navbar" class="scrolled"> <!-- Board 페이지는 항상 scrolled 상태의 흰색 배경 유지 -->
+        <div class="container">
+            <a href="index.html" class="logo">KIM SEON MIN</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#roadmap">Roadmap</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="board.html" class="active">Board</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="board-page-container">
+        <div class="container">
+            <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 메인으로 돌아가기</a>
+            
+            <div class="board-header fade-in">
+                <h1>소통함 (Free Board)</h1>
+                <p>기록을 남기거나 궁금한 점을 자유롭게 질문해 주세요.</p>
+            </div>
+
+            <div class="board-container fade-in">
+                <form id="boardForm" class="board-form">
+                    <input type="text" id="boardName" placeholder="작성자 성함" required>
+                    <input type="text" id="boardTitle" placeholder="제목" required>
+                    <textarea id="boardContent" placeholder="내용을 입력해주세요." required style="resize: none;"></textarea>
+                    <div class="board-options" style="grid-column: span 2; display: flex; align-items: center; gap: 15px; margin-top: -10px;">
+                        <label style="display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 0.9rem;">
+                            <input type="checkbox" id="isSecret" onchange="document.getElementById('boardPassword').style.display = this.checked ? 'block' : 'none'"> 
+                            <i class="fas fa-lock"></i> 비밀글로 작성
+                        </label>
+                        <input type="password" id="boardPassword" placeholder="비밀번호 (4자리 이상)" style="display: none; padding: 8px 15px; border: 1px solid #eee; border-radius: 8px; font-size: 0.85rem; width: 180px;">
+                    </div>
+                    <button type="submit" class="btn-primary" style="grid-column: span 2;">글 남기기</button>
+                    <input type="hidden" id="editIndex" value="-1">
+                </form>
+
+                <div id="postList" class="post-list" style="margin-top: 50px;">
+                    <!-- JS에서 게시글이 로드됩니다. -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 50px 0; background: #f9f9f9; text-align: center; border-top: 1px solid #eee;">
+        <div class="container">
+            <p>&copy; 2025 KIM SEON MIN. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase App/Firestore Compat SDK (사용자용) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
