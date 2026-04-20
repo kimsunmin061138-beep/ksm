@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서 | 반도체 장비 제어 전문가</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #005CB9;
+            --text: #333;
+            --bg: #fff;
+        }
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--text); background: #f0f0f0; padding: 40px 20px; }
+        .resume-container { max-width: 850px; margin: 0 auto; background: var(--bg); padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid var(--primary); position: relative; }
+        .print-btn { position: absolute; top: 30px; right: 40px; background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 700; cursor: pointer; border: none; }
+        header { margin-bottom: 40px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--primary); margin-bottom: 10px; white-space: nowrap; }
+        .contact-info { display: flex; gap: 20px; font-size: clamp(0.75rem, 1.8vw, 0.9rem); color: #666; }
+        section { margin-bottom: 35px; }
+        h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.1rem, 3vw, 1.3rem); border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; color: var(--primary); white-space: nowrap; }
+        .edu-item, .exp-item { margin-bottom: 20px; }
+        .item-header { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 5px; font-size: clamp(0.85rem, 2vw, 1rem); }
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .skill-category h4 { margin-bottom: 10px; color: var(--primary); font-size: clamp(0.9rem, 2.5vw, 1rem); white-space: nowrap; }
+        .project-item { margin-bottom: 25px; }
+        .star-box { background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 10px; font-size: clamp(0.75rem, 2vw, 0.9rem); }
+        .star-box b { color: var(--primary); }
+        
+        @media print {
+            .print-btn { display: none; }
+            body { padding: 0; background: white; }
+            .resume-container { box-shadow: none; width: 100%; border-top: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container" id="resume">
+        <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> PDF로 저장 / 인쇄</button>
+        
+        <header>
+            <h1>김선민 (Kim Seon-min)</h1>
+            <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">Future Customer Engineer | Semiconductor Equipment Control Specialist</p>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> 김선민 (Kim Seon-min) | 포트폴리오 문의 폼 활용</span>
+                <span><i class="fas fa-phone"></i> 010-XXXX-XXXX</span>
+                <span><i class="fas fa-location-dot"></i> 경기도 부천시</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div class="item-header">
+                    <span>동양미래대학교 | 로봇소프트웨어과</span>
+                    <span>2025.03 - 현재</span>
+                </div>
+                <p>지능형 로봇 및 반도체 장비 제어 S/W 전공 | 반도체설비운용 마이크로디그리 이수 중</p>
+            </div>
+            <div class="edu-item">
+                <div class="item-header">
+                    <span>부천대학교 | 자동화로봇과</span>
+                    <span>2022</span>
+                </div>
+                <p>로봇 공학 기초 소양 및 기구학적 사고 기틀 확립</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Manufacturing & Design (H/W)</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 5px; list-style: square; padding-left: 15px;">
+                        <li><b>기구 설계 및 합성</b>: Klann Linkage 기반 링크 기구 합성 및 위상 동기화 제어</li>
+                        <li><b>시퀀스 제어</b>: FluidSIM 활용 전기·공압 회로 설계 및 릴레이/솔레노이드 실무 배선</li>
+                        <li><b>회로 분석</b>: KiCad 활용 기초 전장 도면 스케치 및 하드웨어 회로 해석</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Control & Software (S/W)</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 5px; list-style: square; padding-left: 15px;">
+                        <li><b>Python</b>: 기초 데이터 구조화 및 공학용 데이터 처리 로직 설계</li>
+                        <li><b>Arduino</b>: 아두이노 기반 정밀 센서 인터페이스 및 하드웨어 제어</li>
+                        <li><b>기타 역량</b>: 논리회로 기반 시퀀스 흐름 분석 및 장비 트러블슈팅 기초</li>
+                    </ul>
+                </div>
+                <div class="skill-category" style="grid-column: span 2; border-top: 1px solid #eee; padding-top: 10px; margin-top: 5px;">
+                    <h4 style="display:inline; margin-right: 10px;">Certifications (Planned):</h4>
+                    <span style="font-size: 0.9rem;">생산자동화 / 기계정비 / 전자계산기제어 / 3D프린터개발 산업기사</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Strategic Projects</h2>
+            <!-- Project 1: Robot -->
+            <div class="project-item">
+                <div class="item-header">
+                    <span>Klann Linkage 기반 고효율 8족 보행 로봇 설계</span>
+                    <span>2025</span>
+                </div>
+                <div class="star-box">
+                    <p style="margin-bottom: 8px;"><b>Objective:</b> 단일 동력원과 기구학적 설계만으로 안정적인 동기 보행 매커니즘 구현</p>
+                    <ul style="list-style: disc; padding-left: 15px;">
+                        <li><b>Key Work:</b> 180도 위상 동기화(Phase Sync)를 통한 연속 추진력 확보 및 직진 정확도 최적화</li>
+                        <li><b>Output:</b> 기구학적 설계 역량과 동력 전달 시스템의 효율적 제어 가능성 증명</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2: Sequence Control -->
+            <div class="project-item">
+                <div class="item-header">
+                    <span>전기·공압 시퀀스 회로 설계 및 하드웨어 배선 실무</span>
+                    <span>2025</span>
+                </div>
+                <div class="star-box">
+                    <p style="margin-bottom: 8px;"><b>Problem:</b> 자동화 설비의 핵심인 전기/공압 제어 시스템의 물리적 구동 메커니즘 체득 필요</p>
+                    <ul style="list-style: disc; padding-left: 15px;">
+                        <li><b>Action:</b> FluidSIM 시뮬레이션 회로 구성 및 릴레이/솔레노이드 밸브 실전 하드웨어 전장 배선 수행</li>
+                        <li><b>Result:</b> 소프트웨어 회로가 실린더의 기구적 움직임으로 변환되는 메커니즘을 전 과정 체득하여 장비 트러블슈팅 역량 확보</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3: Circuit Design -->
+            <div class="project-item">
+                <div class="item-header">
+                    <span>KiCad 활용 기초 전장 회로 설계 및 분석</span>
+                    <span>2024 - 2025</span>
+                </div>
+                <div class="star-box">
+                    <p style="margin-bottom: 8px;"><b>Objective:</b> CAD 도면 설계 및 동작점 분석을 통한 하드웨어 설계 기초 확립</p>
+                    <ul style="list-style: disc; padding-left: 15px;">
+                        <li><b>Summary:</b> KiCad를 활용한 전장 도면 스케치 실습 및 BJT 회로 분석을 통한 장비 내부 신호 흐름 논리적 파악</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 4: Arduino Mega Logic -->
+            <div class="project-item">
+                <div class="item-header">
+                    <span>Arduino Mega 기반 멀티 기능 통합 제어 시스템 개발</span>
+                    <span>2025</span>
+                </div>
+                <div class="star-box">
+                    <p style="margin-bottom: 8px;"><b>Objective:</b> Arduino Mega와 Easy Module Mix V1을 활용한 종합 하드웨어 제어 역량 확보</p>
+                    <ul style="list-style: disc; padding-left: 15px;">
+                        <li><b>Key Work:</b> 온습도/조도 센싱, RGB LED 피드백, 반응속도 게임 및 다중 모드 전환 로직 구현</li>
+                        <li><b>Output:</b> 시리얼 통신 및 복합 I/O 제어 알고리즘 설계를 통한 임베디드 시스템 통합 능력 입증</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Career & Others</h2>
+            <div class="exp-item">
+                <div class="item-header">
+                    <span>CU 편의점 매장 관리</span>
+                    <span>2025.01 - 현재</span>
+                </div>
+                <p>현장 책임감 및 매장 효율 개선을 통한 문제 해결 역량 입증.</p>
+            </div>
+            <div class="exp-item">
+                <div class="item-header">
+                    <span>대한민국 육군 만기 전역</span>
+                    <span>2023.01 - 2024.07</span>
+                </div>
+                <p>장비 운용 매뉴얼 엄격 준수 및 팀워크를 통한 사고 예방 역량 확보.</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
