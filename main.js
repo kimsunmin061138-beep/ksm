@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (h1El && pEl) {
         const h1Text = "불가능을 현실로 만드는 기술\u00A0혁신,\n본격적인 융합으로 증명하겠습니다.";
-        const pText = "동양미래대 로봇소프트웨어과에서 반도체 장비 모형을 직접 조립하고 제어하며 실무 감각을 익힌 Customer Engineer 스페셜리스트입니다.";
+        const pText = "동양미래대 로봇소프트웨어과에서 반도체 장비 모형을 직접 조립하고 제어하며\n실무 감각을 익힌 Customer Engineer 스페셜리스트입니다.";
 
         // 초기에는 숨김 처리 (공간은 차지함)
         h1El.style.visibility = 'hidden';
@@ -697,6 +697,34 @@ document.addEventListener('DOMContentLoaded', () => {
             themeIcon.classList.remove('fa-sun');
             themeIcon.classList.add('fa-moon');
         }
+    }
+
+    /* --- Hero Badge Mouse Parallax Effect --- */
+    const hero = document.querySelector('.hero');
+    const parallaxItems = document.querySelectorAll('.parallax-item');
+    
+    if (hero && parallaxItems.length > 0) {
+        hero.addEventListener('mousemove', (e) => {
+            if (window.innerWidth <= 991) return;
+            
+            const { clientX, clientY } = e;
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            
+            const moveX = (clientX - centerX) / 25;
+            const moveY = (clientY - centerY) / 25;
+            
+            parallaxItems.forEach((item) => {
+                const depth = parseFloat(item.getAttribute('data-depth')) || 0.5;
+                item.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
+            });
+        });
+        
+        hero.addEventListener('mouseleave', () => {
+            parallaxItems.forEach(item => {
+                item.style.transform = 'translate(0, 0)';
+            });
+        });
     }
 
     /* --- Back to Top Button Logic --- */
